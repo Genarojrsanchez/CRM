@@ -1,0 +1,29 @@
+{% extends "accounts/base.html" %}
+
+    {% block content %}
+    <br>
+     <div class="row">
+         <div class="col-md">
+            <div class="card shadow-sm p-3 mb-5 bg-white card-body"> 
+                <h5 class="card-header">Products</h5>
+                <table class="table">
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Orders</th>
+                    </tr> 
+                    <!-- for <theModelClassname> in  <className> -->
+                    {% for i in products %} 
+                    <tr> 
+                        <td>{{i.name}}</td>
+                        <td>{{i.category}}</td>
+                        <td>{{i.price}}</td>
+                    </tr>
+                    {% endfor %} 
+                </table>
+             </div>
+        </div>
+    </div>
+    
+    {% endblock %}
+    
