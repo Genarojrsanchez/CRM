@@ -20,6 +20,7 @@ urlpatterns = [
     path('', views.home),
     path('products/', views.products),
     # path('contact/', views.contact),
-    path('customer/<str:pplInfo>/', views.customer)
+    path('customer/<str:pplInfo>/', views.customer),
+    path('createOrder/', views.createOrder, name='createOrder')
 
 ]

@@ -30,5 +30,9 @@ def customer(req, pplInfo):
     contexts = {'customer': customer, 'orders':orders, 'orderCount': orderCount} 
     return render(req, 'accounts/customer.html', contexts)
 
-# def contact(req): 
-#     return render(req, 'accounts/profile.html')
+def createOrder(req):
+
+    context = {}
+    return render(req, 'accounts/orderForm.html', context)    
+
+# def contander(req, 'accounts/profile.html')
