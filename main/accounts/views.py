@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from .forms import OrderForm
 
 def home(req):
     # return HttpResponse("home page" || <template>) replace with render import(look at import from django)
@@ -31,8 +32,10 @@ def customer(req, pplInfo):
     return render(req, 'accounts/customer.html', contexts)
 
 def createOrder(req):
+    
+    form = OrderForm()
 
-    context = {}
+    context = {'form':form}
     return render(req, 'accounts/orderForm.html', context)    
 
 # def contander(req, 'accounts/profile.html')

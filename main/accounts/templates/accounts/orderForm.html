@@ -3,9 +3,11 @@
 {% block content %}
 
 <form action= "" method= "POST"> 
-    <button>
+    {% csrf_token %}
+    {{form}}
+
        <input type="Submit" name= "Submit">
-    </button>
+ 
 </form>
 
 
