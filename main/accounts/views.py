@@ -1,5 +1,5 @@
 # Create your views here.
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import OrderForm
@@ -34,8 +34,18 @@ def customer(req, pplInfo):
 def createOrder(req):
     
     form = OrderForm()
+    if req.method == 'POST':
+        # print('Printing POST:', req.POST) #checking for output on data
+        form = OrderForm(req.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
 
     context = {'form':form}
     return render(req, 'accounts/orderForm.html', context)    
 
-# def contander(req, 'accounts/profile.html')
+def updateOrder(req, pplId):
+    order = Order.objects.get(id=pplId)
+    form = OrderForm(instance = order)
+    context = {'form':form}
+    return render(req, 'accounts/orderForm.html', context)            

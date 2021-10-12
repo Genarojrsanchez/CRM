@@ -26,8 +26,7 @@
         <div class="col-md-7">
             <div class="card shadow-sm p-3 mb-5 bg-white rounded card-body"> 
                 <h5 class="card-header ">Last 5 orders</h5>
-                <a class = "btn btn-primary btn-block" href= "{% url 'createOrder' %}">Create Order</a>   
-                <table class="table table-sm">
+                 <table class="table table-sm">
                     <tr>
                         <th>Products</th>
                         <th>Date Ordered</th>
@@ -40,14 +39,13 @@
                         <td>{{order.product}}</td>
                         <td>{{order.date_created}}</td>
                         <td>{{order.status}}</td>
-                        <td><a class= "btn btn-sm btn-info" href="">Update</a></td>
+                        <td><a class= "btn btn-sm btn-info" href="{% url 'updateOrder' order.id %}">Update</a></td>
                         <td><a class= "btn btn-sm btn-danger" href="">Delete</a></td>
                     </tr>
                     {% endfor %}
                 </table>
                 <hr>
-                <a class="btn btn-outline-secondary btn-sm btn-block" href="">Create Order
-                </a> 
+                <a class = "btn btn-primary btn-block" href= "{% url 'createOrder' %}">Create Order</a> 
             </div>
         </div> 
     </div>

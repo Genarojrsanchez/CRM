@@ -17,10 +17,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home),
-    path('products/', views.products),
+    path('', views.home, name = 'dashBoard'),
+    path('products/', views.products, name = 'products'),
     # path('contact/', views.contact),
     path('customer/<str:pplInfo>/', views.customer),
-    path('createOrder/', views.createOrder, name='createOrder')
+    path('createOrder/', views.createOrder, name='createOrder'),
+    path('updateOrder/<str:pplId>/', views.updateOrder, name= 'updateOrder')
 
 ]

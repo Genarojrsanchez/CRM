@@ -1,4 +1,4 @@
-d{% load static %}
+{% load static %}
 <!-- <h1>NavBar included into all templates</h1>
     <hr> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -9,10 +9,10 @@ d{% load static %}
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto m-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Dashboard</a>
+              <a class="nav-link" href=" {% url 'dashBoard' %}">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
+              <a class="nav-link" href="{% url 'products' %}">Products</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
