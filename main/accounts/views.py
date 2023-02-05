@@ -47,5 +47,10 @@ def createOrder(req):
 def updateOrder(req, pplId):
     order = Order.objects.get(id=pplId)
     form = OrderForm(instance = order)
+        # if req.method == 'POST':
+    #     form = OrderForm(req.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('createOrder/')
     context = {'form':form}
     return render(req, 'accounts/orderForm.html', context)            
