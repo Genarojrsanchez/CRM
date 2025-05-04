@@ -1,6 +1,6 @@
 # Django CRM System
 
-A lightweight Customer Relationship Management (CRM) system built with Python and Django. This project is designed to manage customer information and track orders, demonstrating the core functionalities of a typical CRM.
+A lightweight Customer Relationship Management (CRM) system built with Python and Django. This project is designed to manage customer information and track orders, demonstrating the core functionalities of a CRM.
 
 ## Features
 
